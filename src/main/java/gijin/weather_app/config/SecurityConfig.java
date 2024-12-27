@@ -42,9 +42,10 @@ public class SecurityConfig
         http.csrf(csrf -> csrf.disable())
                 //.cors(cors -> cors.configurationSource(corsConfigurationSource())) // CORS 설정 추가
                 .authorizeHttpRequests(requests -> requests
-                        .requestMatchers("/", "/api/auth/signIn", "/api/auth/signup").permitAll()
-                        .requestMatchers("/public/**").permitAll()
-                        .anyRequest().authenticated()
+//                        .requestMatchers("/", "/api/auth/signIn", "/api/auth/signup").permitAll()
+//                        .requestMatchers("/public/**").permitAll()
+//                        .anyRequest().authenticated()
+                          .anyRequest().permitAll()
                 )
 
                 // Disable form login
