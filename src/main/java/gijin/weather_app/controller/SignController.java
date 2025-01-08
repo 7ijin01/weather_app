@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class SignController {
     private final SignService signService;
 
-    @PostMapping("/api/auth/signup")
-    public String signUp(@RequestBody Member member) {
+    @PostMapping("/api/auth/signUp")
+    public String signUp(@RequestBody Member member)
+    {
         if (signService.signUp(member)) {
             return "/home";
         }

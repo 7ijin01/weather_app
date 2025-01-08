@@ -12,6 +12,7 @@ public class AppConfig {
     public RestTemplate restTemplate() {
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.getMessageConverters().add(new MappingJackson2XmlHttpMessageConverter());
+        //XML 데이터를 처리하려는 경우 이 변환기를 추가해야 RestTemplate이 XML 데이터를 적절히 변환할 수 있습니다.
         return restTemplate;
     }
 }

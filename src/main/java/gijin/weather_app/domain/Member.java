@@ -18,10 +18,10 @@ public class Member
 
     @Column(length = 20)
     private String email;
-    @Column(length = 20)
-    private String password_hash;
-    @Column(length = 20)
-    private String created_at;
-    @Column(length = 20)
-    private String updated_at;
+    @Column(length = 255)
+    private String password;
+    @Column(length = 255)
+    private String created;
+    @Column(length = 255)
+    private String updated;
 }

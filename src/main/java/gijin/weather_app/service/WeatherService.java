@@ -34,7 +34,7 @@ public class WeatherService {
                 .queryParam("serviceKey", apiKey)
                 .queryParam("numOfRows", 10)
                 .queryParam("pageNo", 1)
-                //.queryParam("dataType", "JSON")
+                .queryParam("dataType", "JSON")
                 .queryParam("base_date", baseDate)
                 .queryParam("base_time", baseTime)
                 .queryParam("nx", nx)
@@ -44,10 +44,9 @@ public class WeatherService {
 
 
         try {
-            System.out.println(apiKey);
-            System.out.println(uri);
-            //return restTemplate.getForObject(uri, Map.class);
-            return restTemplate.exchange(uri, HttpMethod.GET, getRequestEntity(), Map.class).getBody();
+
+            return restTemplate.getForObject(uri, Map.class);
+            //return restTemplate.exchange(uri, HttpMethod.GET, getRequestEntity(), Map.class).getBody();
         } catch (Exception e) {
             throw new RuntimeException("Weather API 호출 실패: " + e.getMessage(), e);
         }

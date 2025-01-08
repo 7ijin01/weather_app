@@ -52,6 +52,7 @@ public class WeatherController {
                                              @RequestParam int nx,
                                              @RequestParam int ny) {
         validateAuthorization(token);
+
         return weatherService.getVilageFcst(baseDate, baseTime, nx, ny);
     }
 
