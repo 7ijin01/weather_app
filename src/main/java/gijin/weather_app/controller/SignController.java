@@ -16,8 +16,8 @@ public class SignController {
     public String signUp(@RequestBody Member member)
     {
         if (signService.signUp(member)) {
-            return "/home";
+            return "/";
         }
-        return "/home/login";
+        return "/api/auth/signIn";
     }
 }
